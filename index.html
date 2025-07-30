@@ -14,23 +14,121 @@
 <body>
     <div class="page">
         <header class="header">
-            <div class="header__box">
             <img src="./images/logo.svg" alt="Logo Around USA" class="logo">
-            
         </header>
 
         <main class="content">
             <section class="profile">
+                <div class="profile__info">          
+                <img src="./images/profile-picture.jpg" alt="Jacques Cousteau's profile profile-picture" class="profile__picture">
+                
+                    <h1 class="profile__name">Jacques Cousteau</h1>
+                    <button class="profile__edit-button"></button>
+                    <p class="profile__ocupation">Explorador</p>
+                <button class="profile__add-button"> + </button>
+                </div>    
+
 
             </section>
 
             <section class="elements">
+                <!-- Card 1 -->
+                <div class= "elements__card">
+                    <img src="./images/valle-de-yosemite.jpg" alt="photo Valle de Yosemite" class="elements__image">
+                    <div class="elements__info">
+                    <h2 class="elements__title">Valle de Yosemite</h2>
+                     <img src="./images/heart_no-fill.svg" alt="like button" class="elements__like-button">
+                    </div>
+                    
+                </div>
 
+                <!-- Card 2 -->
+
+                <div class= "elements__card">
+                    <img src="./images/lago-louise.png" alt="photo Lago Louise" class="elements__image">
+                    <div class="elements__info">
+                    <h2 class="elements__title">Lago Louise</h2>
+                     <img src="./images/heart_no-fill.svg" alt="like button" class="elements__like-button">
+                     </div>
+                    
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class= "elements__card">
+                    <img src="./images/montañas-calvas.png" alt="photo Montañas Calvas " class="elements__image">
+                    <div class="elements__info">
+                    <h2 class="elements__title">Montañas Calvas</h2>
+                     <img src="./images/heart_no-fill.svg" alt="like button" class="elements__like-button">
+                     </div>
+                    
+                </div>
+
+                <!-- Card 4 -->
+
+                <div class= "elements__card">
+                    <img src="./images/latemar.png" alt="photo Latemar" class="elements__image">
+                    <div class="elements__info">
+                    <h2 class="elements__title">Latemar</h2>
+                     <img src="./images/heart_no-fill.svg" alt="like button" class="elements__like-button">
+                     </div>
+                    
+                </div>
+
+                <!-- Card 5 -->
+
+                <div class= "elements__card">
+                    <img src="./images/vanois-national.png" alt="photo Vanois National..." class="elements__image">
+                    <div class="elements__info">
+                    <h2 class="elements__title">Vanois National... </h2>
+                    <img src="./images/heart_no-fill.svg" alt="like button" class="elements__like-button">
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+
+                <div class= "elements__card">
+                    <img src="./images/lago-di-braies.png" alt="photo Lago di Braies" class="elements__image">
+                    <div class="elements__info">
+                    <h2 class="elements__title">Lago di Braies</h2>
+                     <img src="./images/heart_no-fill.svg" alt="like button" class="elements__like-button">
+                     </div>
+                </div>
             </section>
+
+            <div class="form">
+                <button type="button" class="form__close-button"> X </button>
+                <form action="" class="form__registration">
+                    <h2 class="form__title">Editar perfil</h2>
+                    <fieldset class="form__content">
+                        <input 
+                        type="text"
+                        class="form__input form__input_name" 
+                        name="name" 
+                        id="name"
+                        placeholder="Nombre"
+                        required
+                        />
+
+                        <input 
+                        type="text"
+                        class="form__input form__input_about" 
+                        name="about" 
+                        id="about"
+                        placeholder="Acerca de mí"
+                        required
+                        />
+                        <button
+                        type="submit"
+                        class="form__save-button">Guardar</button>
+                    </fieldset>
+                </form>
+            </div>
 
         </main>
 
         <footer class="footer">
+            <p class="footer__copyrigth">&copy; 2025 Around The U.S.</p>
 
         </footer>
 

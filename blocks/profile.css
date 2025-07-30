@@ -1,0 +1,125 @@
+.profile__info{
+    max-width: 880px ;
+    display: grid;
+    grid-template-columns: 120px auto auto 150px;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "picture name editprofile addpictures"
+    "picture ocupation ocupation addpictures"
+    ;
+    column-gap: 30px;
+    margin-bottom: 25px;
+}
+
+.profile__picture{
+    grid-area: picture;
+    max-width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+}
+
+.profile__name{
+    grid-area: name;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+    margin: 0;
+    align-self: center;
+}
+
+.profile__edit-button{
+    grid-area: editprofile;
+    height: 24px;
+    width: 24px;
+    align-self: center;
+
+}
+
+.profile__ocupation{
+    grid-area: ocupation;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+    line-height: 100%;
+
+}
+
+.profile__add-button{
+    grid-area: addpictures;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    align-self: center;
+    background-color: black;
+    color: #FFFFFF;
+    font-size: 42px;
+    text-align: center;
+}
+
+@media screen and (max-width:880px) {
+   
+  .profile__info{
+        margin: 0 auto;
+        max-width: 320px ;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 168px 50px 14px 50px;
+        grid-template-areas: 
+        "picture picture" 
+        "name editprofile"
+        "ocupation ocupation" 
+        "addpictures addpictures"
+        ;
+    margin-bottom: 25px;
+    column-gap: 1px;
+    row-gap: 14px;
+}
+
+.profile__picture{
+    grid-area: picture;
+    align-self: center;
+    margin: 0 auto 0 auto;
+
+}
+
+.profile__name{
+    grid-area: name;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    text-align: center;
+}
+
+.profile__edit-button{
+    grid-area: editprofile;
+    height: 18px;
+    width: 18px;
+    padding: 0;
+    margin: 0;
+    background: url(../images/editButton.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    
+
+}
+
+.profile__ocupation{
+    grid-area: ocupation;
+    font-size: 14px;
+    align-self: center;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.profile__add-button{
+    grid-area: addpictures;
+    width: 282px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+   
+}
+}

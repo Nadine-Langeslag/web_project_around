@@ -1,11 +1,28 @@
 .header{
     display: flex;
-    margin: 45px 200px 0 200px;
+    margin: 45px 200px 20px 200px;
     width: 880px;
     height: 74px;
+    border-bottom: 1px solid #545454 ;
 }
 
 .header__logo{
     height:33px ;
     width: 173px;
+}
+
+@media screen and (max-width:880px) {
+  .header{
+    box-sizing: border-box;
+    max-width: 320px;
+    margin: 0;
+    
+}
+
+.header__logo{
+    height:24px ;
+    width: 126px;
+    margin-left: 27px;
+    margin-top: 28px;
+}
 }
