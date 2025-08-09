@@ -29,7 +29,15 @@ formCloseButton.addEventListener("click",function(){
 
 saveButton.addEventListener("input", function(){
     if (formInput.value() !== " "){
-        saveButton.style.background = black;
-        saveButton.style.color = white;
+        saveButton.style.background = "black";
+        saveButton.style.color = "white";
+    }else{
+    button.style.background = "white";
+    button.style.color = "#C4C4C4";
+
     }
+})
+
+saveButton.addEventListener("click",function(){
+    profileForm.classList.remove("form_open")
 })
