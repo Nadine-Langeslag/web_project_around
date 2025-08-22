@@ -1,24 +1,23 @@
-.form{
+.popup{
     visibility: hidden;
     opacity: 0;
     width: 430px;
-    /* width: 100%;
-    height: 100%; */
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
     position: fixed;
     top: 20%;
     left: 40%;
-    /* align-content: center;
-    justify-content: center;
-    align-items: center; */
     z-index: 1;
+    background: rgba(0, 0, 0, .7);
 }
 
-.form_open{
+.popup_open{
     visibility: visible;
     opacity: 1;
 }
 
-.form__close-button{
+.popup__close-button{
     width: 40px;
     height: 40px;
     background: transparent;
@@ -30,29 +29,28 @@
     right: 35%;
 
 }
-.form__close-button:hover{
+.popup__close-button:hover{
     opacity: 0.5;
 }
 
-.form__registration{
+.popup__body{
     width: 430px;
     height: 330px;
     background-color: #FFFFFF;
-    border-radius: 10%;
+    border-radius: 10px;
     box-sizing: border-box;
     position: relative;
 }
 
-.form__title{
+.popup__title{
     font-weight: 900;
     font-size: 24px;
     line-height: 100%;
     color: black;
-    /* text-align: center; */
     padding: 34px;
 }
 
-.form__content{
+.popup__content{
     width: 360px;
     height: 70%;
     margin: auto;
@@ -60,7 +58,7 @@
     border: none;
 }
 
-.form__input{
+.popup__input{
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
@@ -70,10 +68,10 @@
     margin-bottom: 30px;
     border-bottom: 1px solid #c4c4c4;
     align-self: center;
-   /*  color: #c4c4c4; */
+
 }
 
-.form__save-button{
+.popup__save-button{
     width: 358px;
     height: 50px;
     border-radius: 5px;
@@ -83,12 +81,42 @@
     line-height: 100%;
     text-align: center;
     color: #c4c4c4;
-    background: none;
-    
+    background: black;
+    cursor: pointer;
+}
+
+.popup_image{
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-popup__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 20%;
+    left: 40%;
+
+}
+
+.image-popup__image{
+    height: 540px;
+
+} 
+
+.image-popup__title{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+   line-height: 100%;
+
 }
 
 @media screen and (max-width:880px) {
-    .form{
+    .popup{
     visibility: hidden;
     opacity: 0;
     width: 90%;
@@ -98,12 +126,12 @@
     z-index: 1;
 }
 
-.form_open{
+.popup_open{
     visibility: visible;
     opacity: 1;
 }
 
-.form__close-button{
+.popup__close-button{
     width: 26px;
     height: 26px;
     background: transparent;
@@ -115,11 +143,11 @@
     right: 19px;
 
 }
-.form__close-button:hover{
+.popup__close-button:hover{
     opacity: 0.5;
 }
 
-.form__registration{
+.popup__registration{
     width: 100%;
     height: 330px; 
     background-color: #FFFFFF;
@@ -128,16 +156,15 @@
     position: relative;
 }
 
-.form__title{
+.popup__title{
     font-weight: 900;
     font-size: 24px;
     line-height: 100%;
     color: black;
-    /* text-align: center; */
     padding: 34px;
 }
 
-.form__content{
+.popup__content{
     width: 238px;
     height: 70%;
     margin: auto;
@@ -145,7 +172,7 @@
     border: none;
 }
 
-.form__input{
+.popup__input{
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
@@ -158,7 +185,7 @@
     color: #c4c4c4;
 }
 
-.form__save-button{
+.popup__save-button{
     width: 238px;
     height: 50px;
     border-radius: 5px;

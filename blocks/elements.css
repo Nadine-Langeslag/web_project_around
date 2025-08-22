@@ -6,6 +6,7 @@
     row-gap: 20px;
     column-gap: 17px;
     margin-top: 25px;
+    
 }
 
 .elements__card{
@@ -16,6 +17,22 @@
     border-radius: 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    position: relative;
+}
+
+.elements__delete-button{
+    height: 18px;
+    width: 18px;
+    background: url(../images/delete-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    z-index: 5;
+
 }
 
 .elements__image{
@@ -43,8 +60,23 @@
     width: 21px;
     height: 19px;
     align-self: center;
+    background: url(../images/heart_no-fill.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
 }
 
+.elements__like-button_active{
+    width: 21px;
+    height: 19px;
+    align-self: center;
+    background: url(../images/heart_like.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+}
 
 @media screen and (max-width:880px) {
   .elements{
