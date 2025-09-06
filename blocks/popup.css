@@ -1,7 +1,7 @@
 .popup{
     visibility: hidden;
     opacity: 0;
-    width: 430px;
+    /* width: 430px; */
     display: flex;
     /* justify-content: center;
     align-items: center; */
@@ -9,7 +9,8 @@
     top: 20%;
     left: 40%;
     z-index: 1;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, .7); 
+
 }
 
 .popup_open{
@@ -96,9 +97,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: fixed;
+    /* position: fixed;
     top: 20%;
-    left: 40%;
+    left: 40%; */
 
 }
 
@@ -198,4 +199,9 @@
     background: none;
     
 }
+.image-popup__image{
+    height: 299px;
+
+} 
+
 }
