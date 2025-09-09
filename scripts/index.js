@@ -33,6 +33,8 @@ const imagePopup = document.querySelector(".popup_image")
 const imagePopupImg = document.querySelector('.image-popup__image');
 const imagePopupTitle = document.querySelector(".image-popup__title")
 
+const popups = Array.from(document.querySelectorAll('.popup'))
+
 
 /* Initial Cards info */
 const initialCards = [
@@ -90,7 +92,29 @@ saveButton.addEventListener("click",function(){
 
 cardButton.addEventListener("click",function(){
     addCardForm.classList.add("popup_open")
+   /*  document.addEventListener('keydown', escapeClose); */
 })
+/* Close popup with esc & click outside */
+
+ function clickOutPopupEvent(event){
+    if(event.target.classList.contains("popup_open")){
+        event.target.classList.remove("popup_open");
+    }
+}
+
+function escapeClose(event){
+    if(event.key === "Escape"){
+        const openPopup = document.querySelector("popup_open");
+        openPopup.classList.remove("popup_open");
+
+        document.removeEventListener('keydown', escapeClose);
+    }    
+}
+
+popups.forEach(function(popup){
+  popup.addEventListener( "click", clickOutPopupEvent); 
+  })
+
 
 
 /* Card Template */
