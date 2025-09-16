@@ -14,18 +14,6 @@
     width: 100%;
     height: 100vh;
 
-
-    /* visibility: hidden;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20%;
-    left: 40%;
-    z-index: 1;
-    background: rgba(0, 0, 0, .7);  */
-
 }
 
 .popup_open{
@@ -41,8 +29,8 @@
     font-size: xx-large;
     color: #FFFFFF;
     position: absolute;
-    top: -50px;
-    right: -50px;
+    top: -36px;
+    right: -36px;
     z-index: 30;
 
 }
@@ -50,7 +38,7 @@
     opacity: 0.5;
 }
 
-.popup__body{
+.popup__form{
     width: 430px;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -78,10 +66,13 @@
 
 .popup__content{
     width: 360px;
-   
     margin: auto;
     padding: 0 0 30px 0;
     border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .popup__input{
@@ -91,11 +82,22 @@
     width: 100%;
     height: 28px;
     border: none;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    border: none;
     border-bottom: 1px solid #c4c4c4;
     align-self: center;
+    justify-content: space-between;
+    background-color: white;
 
 }
+
+.popup__input:invalid {
+     border-bottom: 1px solid red;
+    }
+
+.popup__input:focus-visible {
+    outline: none
+    }
 
 .popup__save-button{
     width: 358px;
@@ -109,65 +111,44 @@
     color: #c4c4c4;
     background: black;
     cursor: pointer;
+    
 }
-
-/* .popup_image{
-    z-index: 20;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-.image-popup__container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-    /* top: 20%;
-    left: 40%; */
-
-}
-
+ .popup__save-button_disabled{
+    
+    color: #c4c4c4;
+    background: #FFFFFF;
+    
+} 
+/* popup__image-img */
 .image-popup__image{
     height: 540px;
 
 } 
 
+/* popup__image-title */
 .image-popup__title{
     font-family: Inter;
     font-weight: 400;
     font-size: 12px;
-   line-height: 100%;
+    line-height: 100%;
 
 }
+/* .popup__error*/
+.error{
+    color: #FF0000;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    margin-bottom: 30px;
+    /* border-top: 1px solid #FF0000; */
+}
+
 
 @media screen and (max-width:880px) {
-    /* .popup{
-     visibility: hidden;
-    opacity: 0;
-    width: 90%;
-    position: fixed;
-    top: 15%;
-    left: 19px;
-    z-index: 1;
-
-    visibility: hidden;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    background: rgba(0, 0, 0, .7);
-    z-index: 10; 
-    This is the trick for the bacground to blur 
-   /width: 100%;
-    height: 100vh; 
-} */
- .popup__body{
+ .popup__form{
     width: 282px;
+    padding: 20px;
 }
 
 .popup_open{
@@ -180,9 +161,12 @@
     height: 26px;
     background: transparent;
     border: none;
-    font-size: xx-large;
+    font-size:x-large;
     color: #FFFFFF;
     position: absolute;
+    top: -21px;
+    right: -21px;
+
     
 
 }
@@ -243,6 +227,7 @@
 }
 .image-popup__image{
     height: 299px;
+    max-width: 240px;
 
 } 
 
