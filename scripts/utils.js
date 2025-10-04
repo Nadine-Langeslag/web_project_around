@@ -1,3 +1,5 @@
+import Card from "./Сard.js";
+
 export const formProperties = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -29,7 +31,7 @@ const titleInput = document.querySelector(".popup__input_title");
 const urlInput = document.querySelector(".popup__input_url");
 const cardButton = document.querySelector(".profile__add-button");
 /* Card elements */
-const sectionElements = document.querySelector(".elements");
+
 const cardTemplate = document
   .querySelector(".elements__template")
   .content.querySelector(".elements__card");
@@ -94,3 +96,14 @@ function escapeClose(event) {
 popups.forEach(function (popup) {
   popup.addEventListener("click", clickOutPopupEvent);
 });
+
+//data -> image (link), name de la tarjeta
+const createCard = (data) => {
+  return new Card(data.link, data.name, ".elements__template")._getTemplate();
+};
+
+const renderCard = (data, containerCards) => {
+  containerCards.prepend(createCard(data));
+};
+
+export { renderCard, addCardForm, profileForm };

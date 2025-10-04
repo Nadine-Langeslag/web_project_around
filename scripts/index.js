@@ -1,11 +1,23 @@
 import FormValidator from "./FormValidator.js";
-import { formProperties, profileForm, addCardForm } from "../scripts/utils.js";
+import {
+  renderCard,
+  formProperties,
+  profileForm,
+  addCardForm,
+} from "../scripts/utils.js";
 
 const formCardValidator = new FormValidator(addCardForm, formProperties);
 formCardValidator.enableValidation();
 
 const formProfileValidator = new FormValidator(profileForm, formProperties);
 formProfileValidator.enableValidation();
+
+//Popup Elements
+const titleInput = document.querySelector(".popup__input_title");
+const urlInput = document.querySelector(".popup__input_url");
+
+// Card Elements
+const sectionElements = document.querySelector(".elements"); //Sección donde guardaremos las tarjetas
 
 /* Initial Cards info */
 const initialCards = [
@@ -37,7 +49,7 @@ const initialCards = [
 
 /* Card Template */
 
-function cardCreation(name, link) {
+/* function cardCreation(name, link) {
   const card = cardTemplate.cloneNode(true);
   card.querySelector(".elements__image").src = link;
   card.querySelector(".elements__image").alt = name;
@@ -64,18 +76,20 @@ function cardCreation(name, link) {
     imagePopupTitle.textContent = name;
   });
   return card;
-}
+} */
 
 for (let i = 0; i < initialCards.length; i++) {
-  const card = cardCreation(initialCards[i].name, initialCards[i].link);
-  sectionElements.append(card);
+  //const card = cardCreation(initialCards[i].name, initialCards[i].link);
+  //sectionElements.append(card);
+  renderCard(
+    { name: initialCards[i].name, link: initialCards[i].link },
+    sectionElements
+  );
 }
 
 addCardForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const name = titleInput.value;
   const url = urlInput.value;
-  const card = cardCreation(name, url);
-  sectionElements.prepend(card);
-  addCardForm.classList.remove("popup_open");
+  renderCard({ name, link: url }, sectionElements);
 });
