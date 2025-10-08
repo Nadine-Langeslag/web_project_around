@@ -8,7 +8,7 @@ export default class FormValidator {
     this._formInputs.forEach((formInput) => {
       formInput.addEventListener("input", () => {
         const errorMessage = this._formElement.querySelector(
-          `.error_${formInput.name}`
+          `.error__${formInput.name}`
         );
         if (formInput.validity.valid) {
           this._hideErrorMessage(formInput, errorMessage);
