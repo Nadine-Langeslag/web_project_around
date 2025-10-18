@@ -12,7 +12,7 @@ formCardValidator.enableValidation();
 const formProfileValidator = new FormValidator(profileForm, formProperties);
 formProfileValidator.enableValidation();
 
-//Popup Elements
+//Popup Image Elements
 const titleInput = document.querySelector(".popup__input_title");
 const urlInput = document.querySelector(".popup__input_url");
 
