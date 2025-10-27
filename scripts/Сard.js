@@ -1,8 +1,9 @@
 export default class Card {
-  constructor(image, name, cardTemplate) {
+  constructor(image, name, cardTemplate, handleClick) {
     this._image = image; //link de la tarjeta
     this._name = name;
     this._cardTemplate = cardTemplate; //Selector de la clase de card
+    this._handleClick = handleClick;
   }
   _getTemplate() {
     const template = document.querySelector(this._cardTemplate).content;
@@ -28,6 +29,12 @@ export default class Card {
         this._card
           .querySelector(".elements__like-button")
           .classList.toggle("elements__like-button_active");
+      });
+
+    this._card
+      /* .querySelector(".elements__card") */
+      .addEventListener("click", () => {
+        this._handleClick();
       });
   }
 

@@ -50,13 +50,13 @@ const popups = Array.from(document.querySelectorAll(".popup"));
 
 /* Eddit Profile popop */
 
-function editProfile(event) {
+/* function editProfile(event) {
   event.preventDefault();
   profileName.textContent = nameInput.value;
   profileAbout.textContent = aboutInput.value;
 }
 
-profileForm.addEventListener("submit", editProfile);
+profileForm.addEventListener("submit", editProfile); */
 
 profileEditButton.addEventListener("click", function () {
   profileForm.classList.add("popup_open");
@@ -96,6 +96,8 @@ function escapeClose(event) {
 popups.forEach(function (popup) {
   popup.addEventListener("click", clickOutPopupEvent);
 });
+
+//--------------
 
 //data -> image (link), name de la tarjeta
 const createCard = (data) => {

@@ -6,7 +6,7 @@ export default class Section {
   }
 
   renderItems() {
-    this.collection.forEach((item) => {
+    this._collection.forEach((item) => {
       const renderer = this._renderer(item);
       this._container.append(renderer);
     });

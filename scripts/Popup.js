@@ -20,19 +20,19 @@ export default class Popup {
   }
 
   /* Close popup Esc */
-  _handleEscEvent = (event) =>{
+  _handleEscEvent = (event) => {
     if (event.key === "Escape") {
-        this.close ();
-  }
+      this.close();
+    }
+  };
 
   open() {
-    this._popop.classList.add("popop_open");
-    document.addEventListener("keydown", this._handleEscEvent); 
-    
+    this._popup.classList.add("popup_open");
+    document.addEventListener("keydown", this._handleEscEvent);
   }
 
   close() {
-    this._popop.classList.remove("popop_open");
-    document.addEventListener("keydown", this._handleEscEvent); 
+    this._popup.classList.remove("popup_open");
+    document.addEventListener("keydown", this._handleEscEvent);
   }
 }
