@@ -1,5 +1,12 @@
 export default class Card {
-  constructor(image, name, cardTemplate, handleClick) {
+  constructor(
+    image,
+    name,
+    cardTemplate,
+    handleClick
+    /* handellike,
+    handeldelete */
+  ) {
     this._image = image; //link de la tarjeta
     this._name = name;
     this._cardTemplate = cardTemplate; //Selector de la clase de card
@@ -12,29 +19,29 @@ export default class Card {
     this._card.querySelector(".elements__image").alt = this._name;
     this._card.querySelector(".elements__title").textContent = this._name;
     //Activar los eventos para cada una de las tarjetas que estar en la pagina
-    this._setEventListeners();
+    /* this._setEventListeners(); */
     return this._card; //Una vez que colocamos todos los valores a la tarjeta, la retornamos como un objeto
   }
 
   _setEventListeners() {
     this._card
       .querySelector(".elements__delete-button")
-      .addEventListener("click", function () {
+      .addEventListener("click", () => {
         this._card.remove();
       });
 
     this._card
       .querySelector(".elements__like-button")
-      .addEventListener("click", function () {
+      .addEventListener("click", () => {
         this._card
           .querySelector(".elements__like-button")
           .classList.toggle("elements__like-button_active");
       });
 
     this._card
-      /* .querySelector(".elements__card") */
+      .querySelector(".elements__image")
       .addEventListener("click", () => {
-        this._handleClick();
+        this._handleClick(this._name, this._link);
       });
   }
 

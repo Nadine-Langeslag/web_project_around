@@ -8,23 +8,19 @@ import Card from "./Сard.js";
 /* import { renderCard } from "./utils.js"; */
 
 //-------- Profile Edit -----------
-/* Popop profile edit */
-const PopupProfile = new PopupWithForm(".popup__profile", (inputValues) => {
-  UserInfo.setUserInfo(inputValues.name, inputValues.about);
-});
 
 /* Popup User info --> change + save info*/
 const userInfo = new UserInfo(".profile__name", ".profile__ocupation");
-const popoEdidtProfile = new PopupWithForm(".popup__profile", (formData) => {
+const popupEdidtProfile = new PopupWithForm(".popup__profile", (formData) => {
   userInfo.setUserInfo(formData.name, formData.about);
-  PopupProfile.close();
+  popupEdidtProfile.close();
 });
-popoEdidtProfile._setEventListeners();
+popupEdidtProfile._setEventListeners();
 
 /* Edit profile button */
 const profileEditButton = document.querySelector(".profile__edit-button");
 profileEditButton.addEventListener("click", () => {
-  PopupProfile.open();
+  popupEdidtProfile.open();
 });
 
 //-------- Initial Cards info -----------
@@ -59,14 +55,29 @@ const initialCards = [
 /* open popup add card */
 const sectionElements = document.querySelector(".elements");
 
-const PopupAddCard = new PopupWithForm(".popup__card", (inputValues) => {
-  UserInfo.setUserInfo(inputValues.title, inputValues.url);
-});
-
 /* add card info + save + add card*/
 
+const PopupAddCard = new PopupWithForm(".popup__card", (formData) => {
+  //Mapeo para que los nombres coincidan
+  const cardData = {
+    name: formData.title,
+    link: formData.url,
+  };
+
+  // Handle adding new card
+  const newCard = createCard(cardData);
+  sectionElements.prepend(newCard);
+  PopupAddCard.close();
+});
+
 const createCard = (data) => {
-  return new Card(data.link, data.name, ".elements__template")._getTemplate();
+  const card = new Card(data.link, data.name, ".elements__template", () => {
+    const popupImage = new PopupWithImage(".popup_image");
+    popupImage.open(data.name, data.link);
+  });
+  const cardElement = card._getTemplate();
+  card._setEventListeners();
+  return cardElement;
 };
 
 const renderCard = (data, containerCards) => {
@@ -74,43 +85,8 @@ const renderCard = (data, containerCards) => {
 };
 
 for (let i = 0; i < initialCards.length; i++) {
-  renderCard(
-    { name: initialCards[i].name, link: initialCards[i].link },
-    sectionElements
-  );
+  sectionElements.prepend(createCard(initialCards[i]));
 }
-
-/* const titleInput = document.querySelector(".popup__input_title");
-const urlInput = document.querySelector(".popup__input_url");
-
-const pupupAddCard = new PopupWithForm(".popup__card", (inputValues) => {
-  const createCard = (inputValues) => {
-    return new Card(
-      inputValues.link,
-      inputValues.name,
-      ".elements__template"
-    )._getTemplate();
-  };
-
-  const renderCard = (inputValues, containerCards) => {
-    containerCards.prepend(createCard(inputValues));
-  };
-});
-
-for (let i = 0; i < initialCards.length; i++) {
-  //const card = cardCreation(initialCards[i].name, initialCards[i].link);
-  //sectionElements.append(card);
-  renderCard(
-    { name: initialCards[i].name, link: initialCards[i].link },
-    Section
-  );
-}
-addCardForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const name = titleInput.value;
-  const url = urlInput.value;
-  renderCard({ name, link: url }, Section);
-}); */
 
 /* Add card button */
 
@@ -121,6 +97,9 @@ addCardButton.addEventListener("click", () => {
 
 //-------- Form validators  -----------
 
+const pupupCardElement = document.querySelector(".popup__card");
+const pupupEdidProfileElement = document.querySelector(".popup__profile");
+
 const formProperties = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -130,8 +109,11 @@ const formProperties = {
   errorClass: "error_visible",
 };
 
-const formCardValidator = new FormValidator(PopupAddCard, formProperties);
+const formCardValidator = new FormValidator(pupupCardElement, formProperties);
 formCardValidator.enableValidation();
 
-const formProfileValidator = new FormValidator(PopupProfile, formProperties);
+const formProfileValidator = new FormValidator(
+  pupupEdidProfileElement,
+  formProperties
+);
 formProfileValidator.enableValidation();
