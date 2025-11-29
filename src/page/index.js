@@ -1,10 +1,10 @@
-import FormValidator from "./FormValidator.js";
-import Popup from "./Popup.js";
-import PopupWithForm from "./PopupWithForm.js";
-import PopupWithImage from "./PopupWithImage.js";
-import Section from "./Section.js";
-import UserInfo from "./UserInfo.js";
-import Card from "./Сard.js";
+import FormValidator from "../components/FormValidator.js";
+import Popup from "../components/Popup.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
+import Card from "../components/Сard.js";
 /* import { renderCard } from "./utils.js"; */
 
 //-------- Profile Edit -----------
