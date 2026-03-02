@@ -1,8 +1,10 @@
 import Popup from "./Popup.js";
 export default class PopupWithForm extends Popup {
-  constructor(PopupSelector, hadleSubmit) {
-    super(PopupSelector);
-    this._hadleSubmit = hadleSubmit;
+  constructor(popupSelector, handleSubmit) {
+    super(popupSelector);
+    this._handleSubmit = handleSubmit;
+    this._submitButton = this._popup.querySelector(".popup__save-button");
+    this._submitButtonText = this._submitButton.textContent;
   }
 
   _setEventListeners() {
@@ -13,7 +15,7 @@ export default class PopupWithForm extends Popup {
       .addEventListener("submit", (event) => {
         event.preventDefault();
         const inputValues = this._getInputValue(event.target);
-        this._hadleSubmit(inputValues);
+        this._handleSubmit(inputValues);
       });
   }
 
@@ -24,5 +26,12 @@ export default class PopupWithForm extends Popup {
       inputValues[input.name] = input.value;
     });
     return inputValues;
+  }
+  renderLoading(isLoading, loadingText = "Guardando...") {
+    if (isLoading) {
+      this._submitButton.textContent = loadingText;
+    } else {
+      this._submitButton.textContent = this._submitButtonText;
+    }
   }
 }

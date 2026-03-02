@@ -19,8 +19,11 @@
 
         <main class="content">
             <section class="profile">
-                <div class="profile__info">          
+                <div class="profile__info">
+                    <div class="profile__picture-container">
                 <img src="./images/profile-picture.jpg" alt="Profile picture" class="profile__picture">
+                    <button class="profile-picture__edit-button"></button>
+                    </div>
                     <h1 class="profile__name">Jacques Cousteau</h1>
                     <button class="profile__edit-button"></button>
                     <p class="profile__occupation">Explorador</p>
@@ -117,6 +120,46 @@
                 </div>
              </div>
 
+             <!-- Delete confirmation popup -->
+             <div class="popup popup_confirmation">
+                <div class="popup__element">
+                <button type="button" class="popup__close-button"> X </button>
+                <h2 class="popup__title">¿Estás seguro/a?</h2>
+                <form action="" class="popup__form popup__form_confirmation">
+                    <button 
+                    type="submit"
+                    class="popup__save-button">Sí</button>
+                </form>
+                </div>
+             </div>
+
+             <!-- popup-5-Profile picture edit form -->
+
+            <div class="popup popup__profile-picture">
+                <div class="popup__element">
+                <button type="button" class="popup__close-button"> X </button>
+                <form action="" class="popup__form popup__form_profile-picture">
+                    <h2 class="popup__title">Cambiar foto de perfil</h2>
+                    <fieldset class="popup__content">
+                        <input 
+                        type="url"
+                        class="popup__input popup__input_url-profile-picture" 
+                        name="avatar" 
+                        id="link-profile-picture"
+                        placeholder="Enlace a la imagen"
+                        required
+                        />
+                        <span class="error error__url-profile-picture"></span>
+                        <button
+                        type="submit"
+                        class="popup__save-button">Guardar</button>
+                    </fieldset>
+                </form>
+                </div>
+            </div>
+
+
+
 
 
             <section class="elements">
@@ -132,6 +175,7 @@
                 
                 </div>
                 </template>
+
                 
             </section>
 

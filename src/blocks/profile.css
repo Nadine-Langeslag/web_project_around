@@ -11,11 +11,39 @@
     margin-bottom: 25px;
 }
 
-.profile__picture{
+.profile__picture-container{
     grid-area: picture;
+    position: relative;
+    max-width: 120px;
+    height: 120px;
+}
+
+.profile__picture-container:hover .profile-picture__edit-button{
+    visibility: visible;
+
+}
+.profile__picture{
     max-width: 120px;
     height: 120px;
     border-radius: 50%;
+}
+
+.profile__picture-container:hover .profile__picture{
+    opacity: .5;
+} 
+
+.profile-picture__edit-button{
+   visibility: hidden;
+   position: absolute;
+    width: 26px;
+    height: 26px;
+    background: url(../images/editButtonProfile.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+    top: 40%;
+    left: 40%;
 
 }
 
